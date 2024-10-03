@@ -1,25 +1,36 @@
 #include <iostream>
 #include <cmath>
-#include <algorithm> // Для std::min и std::max
 
 using namespace std;
 
 int main() {
-    double x, y, z, minxyz, maxxyz;
+    double x, y, z, min, max;
 
-    std::cout << "Введите число x: ";
-    std::cin >> x;
-    std::cout << "Введите число y: ";
-    std::cin >> y;
-    std::cout << "Введите число z: ";
-    std::cin >> z;
+    cout << "Введите число x: ";
+    cin >> x;
+    cout << "Введите число y: ";
+    cin >> y;
+    cout << "Введите число z: ";
+    cin >> z;
 
-    minxyz = std::min({x, y, z});
-    maxxyz = std::max({x, y, z});
+    if (x <= y && x <= z) {
+        min = x;
+    } else if (y <= x && y <= z) {
+        min = y;
+    } else {
+        min = z;
+    }
 
-    std::cout << "Минимальное значение: " << minxyz << std::endl;
-    std::cout << "Максимальное значение: " << maxxyz << std::endl;
+    if (x >= y && x >= z) {
+        max = x;
+    } else if (y >= x && y >= z) {
+        max = y;
+    } else {
+        max = z;
+    }
+
+    cout << "Минимальное значение: " << min << endl;
+    cout << "Максимальное значение: " << max << endl;
 
     return 0;
 }
-
